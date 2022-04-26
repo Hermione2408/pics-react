@@ -4,7 +4,7 @@ class SearchBar extends React.Component {
   state = { term: "" };
 
   onFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); //enter
 
     this.props.onSubmit(this.state.term);
   };
@@ -19,6 +19,7 @@ class SearchBar extends React.Component {
               type="text"
               value={this.state.term}
               onChange={(e) => {
+                //type and store simulataneously with each letter
                 this.setState({ term: e.target.value });
               }}
             />
